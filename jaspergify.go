@@ -11,6 +11,11 @@ import (
 // Run is the new amazing thing
 func Run(w http.ResponseWriter, r *http.Request) {
 
+	if r.Method == "GET" {
+		http.Error(w, "Error: not found", http.StatusNotFound)
+		return
+	}
+
 	var requestBody struct {
 		Identifier string `json:"identifier"`
 		URL        string `json:"url"`
