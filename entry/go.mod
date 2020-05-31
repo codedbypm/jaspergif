@@ -1,4 +1,4 @@
-module github.com/codedbypm/jaspergify
+module github.com/codedbypm/jaspergify/entry
 
 go 1.13
 

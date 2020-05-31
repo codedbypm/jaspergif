@@ -1,5 +1,5 @@
-// Package jaspergify contains an HTTP Cloud Function.
-package jaspergify
+// Package entry contains an HTTP Cloud Function.
+package entry
 
 import (
 	"encoding/json"
@@ -8,8 +8,8 @@ import (
 	"net/url"
 )
 
-// Run is the new amazing thing
-func Run(w http.ResponseWriter, r *http.Request) {
+// Entry is the new amazing thing
+func Entry(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "GET" {
 		http.Error(w, "Error: not found", http.StatusNotFound)

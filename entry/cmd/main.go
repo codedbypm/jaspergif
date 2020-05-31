@@ -5,11 +5,11 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	"github.com/codedbypm/jaspergify"
+	"github.com/codedbypm/jaspergify/entry"
 )
 
 func main() {
-	funcframework.RegisterHTTPFunction("/go", jaspergify.Run)
+	funcframework.RegisterHTTPFunction("/", entry.Entry)
 
 	port := "8080"
 	if envPort := os.Getenv("PORT"); envPort != "" {
