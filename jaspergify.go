@@ -1,5 +1,5 @@
 // Package jaspergify contains an HTTP Cloud Function.
-package jaspergif
+package jaspergify
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 
 // HelloWorld prints the JSON encoded "message" field in the body
 // of the request or "Hello, World!" if there isn't one.
-func Jaspergif(w http.ResponseWriter, r *http.Request) {
+func Run(w http.ResponseWriter, r *http.Request) {
 
 	var response struct {
 		Challenge string `json:"challenge"`
