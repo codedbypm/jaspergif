@@ -54,13 +54,6 @@ github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDk
 github.com/cloudevents/sdk-go v0.10.0/go.mod h1:PW8UwWI6tD2Ry5kFpZfV1qlrADFkfaDCZXLiJ1dC1Ks=
 github.com/cloudevents/sdk-go v1.0.0 h1:gS5I0s2qPmdc4GBPlUmzZU7RH30BaiOdcRJ1RkXnPrc=
 github.com/cloudevents/sdk-go v1.0.0/go.mod h1:3TkmM0cFqkhCHOq5JzzRU/RxRkwzoS8TZ+G448qVTog=
-github.com/codedbypm/agora-functions v0.0.0-20200516192517-f2f0b150720c h1:prZhNe7vedGoTpcXxJfJ6MrBaljLoxrS3JzUHbXhg5E=
-github.com/codedbypm/agora-functions/auth v0.0.1/go.mod h1:KR37DLFTStO/R29iftNENr3Eol4H2ISiVjeOeoS96eM=
-github.com/codedbypm/agora-functions/errors v0.0.0-20200103153406-098fa16aa8f3/go.mod h1:Ea/T0AzMIN1Kt1c0vYc/R2h7EfmNYzrdx/IsM6ejLuk=
-github.com/codedbypm/agora-functions/log v0.0.0-20200516180657-99c2d934ea33 h1:ohTElhp9DxvyQY23q49/+BnlHu0qZUOfbfbb5Y9HNQU=
-github.com/codedbypm/agora-functions/log v0.0.0-20200516180657-99c2d934ea33/go.mod h1:w/A4Thkq7BEh4eCYG80HQaIXHO/CCXncFnDz7hDoHqg=
-github.com/codedbypm/agora-functions/login v0.0.0-20200516192517-f2f0b150720c h1:skt61DcxDX9/bgTaj6xVX6Fiek0HO9B0X92vs2n7e5s=
-github.com/codedbypm/agora-functions/login v0.0.0-20200516192517-f2f0b150720c/go.mod h1:3p26wgG1PvUNBFzQumX4vXbsVAha3SDfj1BYFrl8/Dc=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
