@@ -1,4 +1,4 @@
-// Package p contains an HTTP Cloud Function.
+// Package jaspergify contains an HTTP Cloud Function.
 package jaspergif
 
 import (
@@ -11,6 +11,7 @@ import (
 // HelloWorld prints the JSON encoded "message" field in the body
 // of the request or "Hello, World!" if there isn't one.
 func Jaspergif(w http.ResponseWriter, r *http.Request) {
+
 	var response struct {
 		Challenge string `json:"challenge"`
 	}
