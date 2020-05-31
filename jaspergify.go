@@ -3,26 +3,30 @@ package jaspergify
 
 import (
 	"encoding/json"
-	"fmt"
-	"html"
+	"io/ioutil"
+	"log"
 	"net/http"
 )
 
-// HelloWorld prints the JSON encoded "message" field in the body
-// of the request or "Hello, World!" if there isn't one.
+// Run is the new amazing thing
 func Run(w http.ResponseWriter, r *http.Request) {
 
-	var response struct {
-		Challenge string `json:"challenge"`
+	var requestBody struct {
+		Identifier string `json:"identifier"`
+		URL        string `json:"url"`
 	}
 
-	if err := json.NewDecoder(r.Body).Decode(&response); err != nil {
-		fmt.Fprint(w, "ukMkofynvX8SiGDxp1APZBXG7TorVFVqjaxKzsPnjJY64XIzl7TT")
+	bytes, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		log.Print(err)
+		http.Error(w, "Could not read POST request body", http.StatusBadRequest)
 		return
 	}
-	if response.Challenge == "" {
-		fmt.Fprint(w, "ukMkofynvX8SiGDxp1APZBXG7TorVFVqjaxKzsPnjJY64XIzl7TT")
+
+	if err := json.Unmarshal(bytes, &requestBody); err != nil {
+		log.Print(err)
+		http.Error(w, "Could not decode POST request body", http.StatusBadRequest)
 		return
 	}
-	fmt.Fprint(w, html.EscapeString(response.Challenge))
+
 }
