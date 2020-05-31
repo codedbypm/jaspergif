@@ -4,8 +4,8 @@ package jaspergify
 import (
 	"encoding/json"
 	"io/ioutil"
-	"log"
 	"net/http"
+	"net/url"
 )
 
 // Run is the new amazing thing
@@ -23,15 +23,20 @@ func Run(w http.ResponseWriter, r *http.Request) {
 
 	bytes, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		log.Print(err)
-		http.Error(w, "Could not read POST request body", http.StatusBadRequest)
+		http.Error(w, "Error: bad request - invalid request", http.StatusBadRequest)
 		return
 	}
 
 	if err := json.Unmarshal(bytes, &requestBody); err != nil {
-		log.Print(err)
-		http.Error(w, "Could not decode POST request body", http.StatusBadRequest)
+		http.Error(w, "Error: bad request - invalid body", http.StatusBadRequest)
 		return
 	}
 
+	urlComponents, err := url.Parse("https://media3.giphy.com/media/xUOxf4i3pCY6WwxBOo/giphy.gif?cid=6104955e701de1ad9435afe4c20fa29dd9ef371f6b36f183&rid=giphy.gif")
+	if err != nil {
+		http.Error(w, "Error: bad request - invalid url", http.StatusBadRequest)
+		return
+	}
+
+	urlComponents.Query().Get("cid")
 }
