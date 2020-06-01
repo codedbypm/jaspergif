@@ -4,12 +4,12 @@ package entry
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 
 	"cloud.google.com/go/firestore"
+	"cloud.google.com/go/pubsub"
 )
 
 type gif struct {
@@ -58,7 +58,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	write, err := client.Collection("gifs").NewDoc().Create(ctx, gif{
+	gif, err := client.Collection("gifs").NewDoc().Create(ctx, gif{
 		Identifier: query.Get("cid"),
 	})
 	if err != nil {
@@ -66,5 +66,30 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(write)
+	gifData, err := json.Marshal(gif)
+	if err != nil {
+		http.Error(w, "Error: internal error - could not marshal new gif entry", http.StatusInternalServerError)
+		return
+	}
+
+	// PubSubMessage is the payload of a Pub/Sub event.
+	// See https://cloud.google.com/functions/docs/calling/pubsub.
+	type PubSubMessage struct {
+		Data []byte `json:"data"`
+	}
+
+	// Create Pub/Sub client
+	pubsubClient, err := pubsub.NewClient(ctx, "jasperify")
+	if err != nil {
+		http.Error(w, "Error: internal error - could not create Pub/Sub Client", http.StatusInternalServerError)
+		return
+	}
+
+	pubsubTopic := pubsubClient.Topic("new-gif-request")
+
+	res := pubsubTopic.Publish(r.Context(), &pubsub.Message{Data: gifData})
+	if _, err := res.Get(r.Context()); err != nil {
+		http.Error(w, "Error: internal error - could not publish Pub/Sub topic", http.StatusInternalServerError)
+		return
+	}
 }
