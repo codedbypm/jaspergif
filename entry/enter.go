@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"cloud.google.com/go/firestore"
 	"cloud.google.com/go/pubsub"
@@ -39,13 +40,8 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	gifURLComponents, err := url.Parse(gifInfo.URL)
-	if err != nil {
-		http.Error(w, "Error: bad request - invalid URL", http.StatusBadRequest)
-		return
-	}
-
-	query, err := url.ParseQuery(gifURLComponents.RawQuery)
+	gifURL, err := url.Parse(gifInfo.URL)
+	pathComponents := strings.Split(gifURL.Path, "/")
 	if err != nil {
 		http.Error(w, "Error: bad request - missing required 'cid' query item", http.StatusBadRequest)
 		return
@@ -59,7 +55,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 	}
 
 	gif, err := client.Collection("gifs").NewDoc().Create(ctx, gif{
-		Identifier: query.Get("cid"),
+		Identifier: pathComponents[2],
 	})
 	if err != nil {
 		http.Error(w, "Error: internal error - could not create GIF entry in Firestore", http.StatusInternalServerError)
@@ -79,7 +75,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Create Pub/Sub client
-	pubsubClient, err := pubsub.NewClient(ctx, "jasperify")
+	pubsubClient, err := pubsub.NewClient(ctx, "jaspergif")
 	if err != nil {
 		http.Error(w, "Error: internal error - could not create Pub/Sub Client", http.StatusInternalServerError)
 		return
