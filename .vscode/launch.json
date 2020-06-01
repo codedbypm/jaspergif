@@ -11,9 +11,21 @@
             "mode": "auto",
             "program": "${workspaceFolder}/entry/cmd",
             "env": {
-                "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/entry/cmd/jaspergif-309e2a047a63.json"
+                "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/jaspergif-309e2a047a63.json"
+            },
+            "args": []
+        },
+        {
+            "name": "Fetch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/fetch/cmd",
+            "env": {
+                "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/jaspergif-309e2a047a63.json"
             },
             "args": []
         }
+
     ]
 }

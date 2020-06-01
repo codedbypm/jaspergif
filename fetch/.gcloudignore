@@ -1,0 +1,5 @@
+.gcloudignore
+/cmd
+*_test.go
+.vscode
+*.code-workspace
