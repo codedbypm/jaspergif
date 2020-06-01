@@ -12,7 +12,7 @@ import (
 	"cloud.google.com/go/firestore"
 )
 
-type Gif struct {
+type gif struct {
 	Identifier string
 }
 
@@ -58,7 +58,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	write, err := client.Collection("gifs").NewDoc().Create(ctx, Gif{
+	write, err := client.Collection("gifs").NewDoc().Create(ctx, gif{
 		Identifier: query.Get("cid"),
 	})
 	if err != nil {
