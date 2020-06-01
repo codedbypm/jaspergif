@@ -10,7 +10,9 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/entry/cmd",
-            "env": {},
+            "env": {
+                "GOOGLE_APPLICATION_CREDENTIALS": "${workspaceFolder}/entry/cmd/jaspergif-2b31270f7df9.json"
+            },
             "args": []
         }
     ]
