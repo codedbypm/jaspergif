@@ -26,4 +26,12 @@ func Fetch(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error: bad request - invalid body", http.StatusBadRequest)
 		return
 	}
+
+	// Create Giphy request
+	res, err := http.Get("https://api.giphy.com/v1/gifs/" + requestBody.Identifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT")
+	if err != nil {
+		http.Error(w, "Error: bad request - invalid request for api.giphy.com", http.StatusBadRequest)
+		return
+	}
+
 }
