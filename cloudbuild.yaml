@@ -14,15 +14,10 @@
             "name": "gcr.io/cloud-builders/gcloud",
             "args": [
                 "functions", 
-                "deploy", 
-                "${_FUNCTION_NAME}", 
-                "--entry-point", 
-                "${_FUNCTION_ENTRY_POINT}", 
-                "--trigger-topic",
-                "${_TRIGGER_PUB_SUB_TOPIC}",
-                "--runtime=go113",
-                "--region=europe-west1",
-                "--allow-unauthenticated",
+                "deploy",  "$_FUNCTION_NAME", 
+                "--entry-point",  "$_FUNCTION_ENTRY_POINT", 
+                "${_TRIGGER_PUBSUB_TOPIC}", "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
+                "${_TRIGGER_TYPE}",                
             ],
             "dir": "${_WORKING_DIR}"
         }
