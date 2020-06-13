@@ -58,7 +58,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		Status:          model.Received,
 	}
 
-	gif, _, err := client.Collection("jaspergify-request").Add(ctx, request)
+	gif, _, err := client.Collection("requests").Add(ctx, request)
 	if err != nil {
 		http.Error(w, "Error: internal error - could not create gif request entry in Firestore", http.StatusInternalServerError)
 		return
