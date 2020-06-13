@@ -8,7 +8,7 @@
         {    
             "name": "gcr.io/cloud-builders/go",
             "args": ["install"],
-            # "dir": "${_WORKING_DIR}"
+            "dir": "${_WORKING_DIR}"
         },
         {
             "name": "gcr.io/cloud-builders/gcloud",
@@ -21,15 +21,9 @@
                 "--runtime=go113",
                 "--region=europe-west1",
                 "--trigger-http",
-                "--allow-unauthenticated"
-
-                "functions", 
-                "deploy",  "$_FUNCTION_NAME", 
-                "--entry-point",  "$_FUNCTION_ENTRY_POINT", 
-                "${_TRIGGER_PUBSUB_TOPIC}", "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
-                "${_TRIGGER_TYP}",                
+                "--allow-unauthenticated",
             ],
-            # "dir": "${_WORKING_DIR}"
+            "dir": "${_WORKING_DIR}"
         }
     ]
 }
