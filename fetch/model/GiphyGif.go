@@ -2,7 +2,7 @@ package model
 
 // GiphyGif model the respone received from Giphy
 type GiphyGif struct {
-	Id     string
-	Mp4URL string
-	Size   int
+	Identifier string `firestore:"identifier"`
+	Mp4URL     string `firestore:"mp4URL"`
+	Size       int    `firestore:"size"`
 }
