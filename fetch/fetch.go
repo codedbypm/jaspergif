@@ -6,8 +6,9 @@ import (
 	"net/http"
 )
 
+// Fetch is the next new thing
 func Fetch(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "GET" {
+	if r.Method != "POST" {
 		http.Error(w, "Error: not found", http.StatusNotFound)
 		return
 	}
@@ -34,4 +35,8 @@ func Fetch(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if res.StatusCode != http.StatusOK {
+		http.Error(w, "Error: not found - The request gif could not be found on api.giphy.com", http.StatusNotFound)
+		return
+	}
 }
