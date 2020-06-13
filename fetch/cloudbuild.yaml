@@ -1,0 +1,27 @@
+{
+    "options": {
+        "env": [
+            "PROJECT_ROOT=github.com/codedbypm/jaspergify",
+        ]
+   },
+    "steps": [
+        {    
+            "name": "gcr.io/cloud-builders/go",
+            "args": ["install"],
+            # "dir": "${_WORKING_DIR}"
+        },
+        {
+            "name": "gcr.io/cloud-builders/gcloud",
+            "args": [
+                "functions", 
+                "deploy",  "$_FUNCTION_NAME", 
+                "--entry-point",  "$_FUNCTION_ENTRY_POINT", 
+                "--runtime=go113",
+                "--region=europe-west1",
+                "--allow-unauthenticated"
+                "${_TRIGGER_PUBSUB_TOPIC}", "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
+            ],
+            # "dir": "${_WORKING_DIR}"
+        }
+    ]
+}
