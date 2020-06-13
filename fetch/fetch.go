@@ -62,12 +62,19 @@ func Fetch(w http.ResponseWriter, r *http.Request) {
 	data := temnpGif["data"].(map[string]interface{})
 	id := data["id"].(string)
 	images := data["images"].(map[string]interface{})
+	original := images["original"].(map[string]interface{})
+	frames := original["frames"].(string)
+	framesInt, err := strconv.Atoi(frames)
+	if err != nil {
+		http.Error(w, "Error: bad response - Invalid number of frames from Giphy", http.StatusInternalServerError)
+		return
+	}
 	originalMp4 := images["original_mp4"].(map[string]interface{})
 	mp4URL := originalMp4["mp4"].(string)
 	size := originalMp4["mp4_size"].(string)
 	sizeInt, err := strconv.Atoi(size)
 	if err != nil {
-		http.Error(w, "Error: bad response - Invalid size of mp4 filpe from Giphy", http.StatusInternalServerError)
+		http.Error(w, "Error: bad response - Invalid size of mp4 from Giphy", http.StatusInternalServerError)
 		return
 	}
 
@@ -75,6 +82,7 @@ func Fetch(w http.ResponseWriter, r *http.Request) {
 		Identifier: id,
 		Mp4URL:     mp4URL,
 		Size:       sizeInt,
+		Frames:     framesInt,
 	}
 
 	ctx := context.Background()
