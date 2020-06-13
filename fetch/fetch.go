@@ -8,6 +8,7 @@ import (
 	"strconv"
 
 	"cloud.google.com/go/firestore"
+	"cloud.google.com/go/pubsub"
 	"github.com/codedbypm/jaspergify/fetch/model"
 )
 
@@ -89,4 +90,30 @@ func Fetch(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// PubSubMessage is the payload of a Pub/Sub event.
+	// See https://cloud.google.com/functions/docs/calling/pubsub.
+	type PubSubMessage struct {
+		Data []byte `json:"data"`
+	}
+
+	// Create Pub/Sub client
+	pubsubClient, err := pubsub.NewClient(ctx, "jaspergif")
+	if err != nil {
+		http.Error(w, "Error: internal error - could not create Pub/Sub Client", http.StatusInternalServerError)
+		return
+	}
+
+	pubsubTopic := pubsubClient.Topic("new-giphy")
+
+	gifData, err := json.Marshal(gif)
+	if err != nil {
+		http.Error(w, "Error: internal error - could not marshal GiphyGif instance", http.StatusInternalServerError)
+		return
+	}
+
+	pubResult := pubsubTopic.Publish(r.Context(), &pubsub.Message{Data: gifData})
+	if _, err := pubResult.Get(r.Context()); err != nil {
+		http.Error(w, "Error: internal error - could not publish Pub/Sub topic 'new-giphy'", http.StatusInternalServerError)
+		return
+	}
 }
