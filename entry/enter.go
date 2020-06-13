@@ -20,7 +20,7 @@ type gif struct {
 // Entry is the new amazing thing
 func Entry(w http.ResponseWriter, r *http.Request) {
 
-	if r.Method == "GET" {
+	if r.Method != "POST" {
 		http.Error(w, "Error: not found", http.StatusNotFound)
 		return
 	}
