@@ -8,14 +8,12 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 
 	"cloud.google.com/go/firestore"
 	"cloud.google.com/go/pubsub"
+	"github.com/codedbypm/jaspergify/entry/model"
 )
-
-type gif struct {
-	Identifier string
-}
 
 // Entry is the new amazing thing
 func Entry(w http.ResponseWriter, r *http.Request) {
@@ -54,17 +52,19 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	gif, err := client.Collection("gifs").NewDoc().Create(ctx, gif{
-		Identifier: pathComponents[2],
+	gif, _, err := client.Collection("jaspergify-request").Add(ctx, model.JaspergifyRequest{
+		GiphyIdentifier: pathComponents[2],
+		timestamp:       time.Now(),
+		status:          Received,
 	})
 	if err != nil {
-		http.Error(w, "Error: internal error - could not create GIF entry in Firestore", http.StatusInternalServerError)
+		http.Error(w, "Error: internal error - could not create gif request entry in Firestore", http.StatusInternalServerError)
 		return
 	}
 
 	gifData, err := json.Marshal(gif)
 	if err != nil {
-		http.Error(w, "Error: internal error - could not marshal new gif entry", http.StatusInternalServerError)
+		http.Error(w, "Error: internal error - could not marshal new gif request entry", http.StatusInternalServerError)
 		return
 	}
 
