@@ -20,7 +20,6 @@
                 "$_FUNCTION_ENTRY_POINT", 
                 "--runtime=go113",
                 "--region=europe-west1",
-                "--allow-unauthenticated",
                 "${_TRIGGER_PUBSUB_TOPIC}", 
                 "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
             ],
