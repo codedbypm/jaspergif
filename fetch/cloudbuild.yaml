@@ -8,7 +8,7 @@
         {    
             "name": "gcr.io/cloud-builders/go",
             "args": ["install"],
-            # "dir": "${_WORKING_DIR}"
+            "dir": "${_WORKING_DIR}"
         },
         {
             "name": "gcr.io/cloud-builders/gcloud",
@@ -21,7 +21,7 @@
                 "--allow-unauthenticated"
                 "${_TRIGGER_PUBSUB_TOPIC}", "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
             ],
-            # "dir": "${_WORKING_DIR}"
+            "dir": "${_WORKING_DIR}"
         }
     ]
 }
