@@ -70,12 +70,6 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// PubSubMessage is the payload of a Pub/Sub event.
-	// See https://cloud.google.com/functions/docs/calling/pubsub.
-	type PubSubMessage struct {
-		Data []byte `json:"data"`
-	}
-
 	// Create Pub/Sub client
 	pubsubClient, err := pubsub.NewClient(ctx, "jaspergif")
 	if err != nil {
