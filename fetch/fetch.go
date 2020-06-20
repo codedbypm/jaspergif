@@ -2,14 +2,10 @@ package fetch
 
 import (
 	"context"
-	"encoding/json"
-	"io/ioutil"
-	"net/http"
-	"strconv"
+	"strings"
+	"time"
 
-	"cloud.google.com/go/firestore"
-	"cloud.google.com/go/pubsub"
-	"github.com/codedbypm/jaspergify/fetch/model"
+	"github.com/codedbypm/jaspergify/model"
 )
 
 // Fetch is the next new thing

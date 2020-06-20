@@ -12,7 +12,7 @@ import (
 
 	"cloud.google.com/go/firestore"
 	"cloud.google.com/go/pubsub"
-	"github.com/codedbypm/jaspergify/entry/model"
+	"github.com/codedbypm/jaspergify/model"
 )
 
 // Entry is the new amazing thing
