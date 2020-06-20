@@ -2,7 +2,6 @@
 package decode
 
 import (
-	"context"
 	"encoding/json"
 	"image/gif"
 	"io/ioutil"
@@ -18,7 +17,8 @@ func Decode(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var gifMp4 struct {
-		Mp4URL string `json:"mp4URL"`
+		url  string `json:"mp4URL"`
+		size int    `json:"size"`
 	}
 
 	bytes, err := ioutil.ReadAll(r.Body)
@@ -27,15 +27,19 @@ func Decode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := json.Unmarshal(bytes, &gifInfo); err != nil {
+	if err := json.Unmarshal(bytes, &gifMp4); err != nil {
 		http.Error(w, "Error: bad request - invalid body", http.StatusBadRequest)
 		return
 	}
 
-	ctx := context.Background()
-	downloadClient := http.Client()
-	response, err := downloadClient.Get(gifMp4.Mp4URL)
+	response, err := http.Get(gifMp4.Mp4URL)
 	defer response.Body.Close()
 
 	gif, err := gif.DecodeAll(response.Body)
+	if err != nil {
+		http.Error(w, "Error: bad response - could not download mp4 file", http.StatusBadRequest)
+		return
+	}
+
+	print(gif)
 }
