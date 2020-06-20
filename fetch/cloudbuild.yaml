@@ -16,12 +16,12 @@
                 "functions", 
                 "deploy",  
                 "$_FUNCTION_NAME", 
-                "--entry-point",  
-                "$_FUNCTION_ENTRY_POINT", 
-                "--runtime=go113",
                 "--region=europe-west1",
-                "${_TRIGGER_PUBSUB_TOPIC}", 
-                "${_TRIGGER_PUBSUB_TOPIC_NAME}",                
+                "--runtime=go113",
+                "--trigger-event", 
+                "providers/cloud.firestore/eventTypes/document.create",
+                "--trigger-resource",
+                "projects/jaspergif/databases/(default)/documents/requests/{request}",
             ],
             "dir": "${_WORKING_DIR}"
         }
