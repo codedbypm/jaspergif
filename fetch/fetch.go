@@ -8,116 +8,110 @@ import (
 	"github.com/codedbypm/jaspergify/model"
 )
 
+// FirestoreEvent is the payload of a Firestore event.
+type FirestoreEvent struct {
+	OldValue   FirestoreValue `json:"oldValue"`
+	Value      FirestoreValue `json:"value"`
+	UpdateMask struct {
+		FieldPaths []string `json:"fieldPaths"`
+	} `json:"updateMask"`
+}
+
+// FirestoreValue holds Firestore fields.
+type FirestoreValue struct {
+	CreateTime time.Time               `json:"createTime"`
+	Fields     model.JaspergifyRequest `json:"fields"`
+	Name       string                  `json:"name"`
+	UpdateTime time.Time               `json:"updateTime"`
+}
+
 // Fetch is the next new thing
-func Fetch(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
-		http.Error(w, "Error: not found", http.StatusNotFound)
-		return
-	}
+func Fetch(ctx context.Context, e FirestoreEvent) error {
+	fullPath := strings.Split(e.Value.Name, "/documents/")[1]
+	pathParts := strings.Split(fullPath, "/")
+	collection := pathParts[0]
+	doc := strings.Join(pathParts[1:], "/")
+	curValue := e.Value.Fields.Original.StringValue
 
-	var requestBody struct {
-		Identifier string `json:"identifier"`
-	}
+	// giphyIdentifier := payload["GiphyIdentifier"].(string)
 
-	bytes, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		http.Error(w, "Error: bad request - invalid request", http.StatusBadRequest)
-		return
-	}
+	// // Create Giphy request
+	// res, err := http.Get("https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT")
+	// if err != nil {
+	// 	return err
+	// }
 
-	if err := json.Unmarshal(bytes, &requestBody); err != nil {
-		http.Error(w, "Error: bad request - invalid body", http.StatusBadRequest)
-		return
-	}
+	// if res.StatusCode != http.StatusOK {
+	// 	return errors.New("Error: not found - The request gif could not be found on api.giphy.com")
+	// }
 
-	// Create Giphy request
-	res, err := http.Get("https://api.giphy.com/v1/gifs/" + requestBody.Identifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT")
-	if err != nil {
-		http.Error(w, "Error: bad request - invalid request for api.giphy.com", http.StatusBadRequest)
-		return
-	}
+	// bytes, err := ioutil.ReadAll(res.Body)
+	// if err != nil {
+	// 	return err
+	// }
 
-	if res.StatusCode != http.StatusOK {
-		http.Error(w, "Error: not found - The request gif could not be found on api.giphy.com", http.StatusNotFound)
-		return
-	}
+	// var temnpGif map[string]interface{}
+	// err = json.Unmarshal(bytes, &temnpGif)
+	// if err != nil {
+	// 	return err
+	// }
 
-	bytes, err = ioutil.ReadAll(res.Body)
-	if err != nil {
-		http.Error(w, "Error: bad response - The response received by Giphy could not read", http.StatusInternalServerError)
-		return
-	}
+	// data := temnpGif["data"].(map[string]interface{})
+	// id := data["id"].(string)
+	// images := data["images"].(map[string]interface{})
+	// original := images["original"].(map[string]interface{})
+	// frames := original["frames"].(string)
+	// framesInt, err := strconv.Atoi(frames)
+	// if err != nil {
+	// 	return err
+	// }
+	// originalMp4 := images["original_mp4"].(map[string]interface{})
+	// mp4URL := originalMp4["mp4"].(string)
+	// size := originalMp4["mp4_size"].(string)
+	// sizeInt, err := strconv.Atoi(size)
+	// if err != nil {
+	// 	return err
+	// }
 
-	var temnpGif map[string]interface{}
-	err = json.Unmarshal(bytes, &temnpGif)
-	if err != nil {
-		http.Error(w, "Error: bad response - The response received by Giphy could not decoded", http.StatusInternalServerError)
-		return
-	}
+	// gif := model.GiphyGif{
+	// 	Identifier: id,
+	// 	Mp4URL:     mp4URL,
+	// 	Size:       sizeInt,
+	// 	Frames:     framesInt,
+	// }
 
-	data := temnpGif["data"].(map[string]interface{})
-	id := data["id"].(string)
-	images := data["images"].(map[string]interface{})
-	original := images["original"].(map[string]interface{})
-	frames := original["frames"].(string)
-	framesInt, err := strconv.Atoi(frames)
-	if err != nil {
-		http.Error(w, "Error: bad response - Invalid number of frames from Giphy", http.StatusInternalServerError)
-		return
-	}
-	originalMp4 := images["original_mp4"].(map[string]interface{})
-	mp4URL := originalMp4["mp4"].(string)
-	size := originalMp4["mp4_size"].(string)
-	sizeInt, err := strconv.Atoi(size)
-	if err != nil {
-		http.Error(w, "Error: bad response - Invalid size of mp4 from Giphy", http.StatusInternalServerError)
-		return
-	}
+	// newCtx := context.Background()
+	// client, err := firestore.NewClient(newCtx, "jaspergif")
+	// if err != nil {
+	// 	return err
+	// }
 
-	gif := model.GiphyGif{
-		Identifier: id,
-		Mp4URL:     mp4URL,
-		Size:       sizeInt,
-		Frames:     framesInt,
-	}
+	// _, _, err = client.Collection("giphys").Add(newCtx, gif)
+	// if err != nil {
+	// 	return err
+	// }
 
-	ctx := context.Background()
-	client, err := firestore.NewClient(ctx, "jaspergif")
-	if err != nil {
-		http.Error(w, "Error: internal error - could not create Firestore client", http.StatusInternalServerError)
-		return
-	}
+	// // PubSubMessage is the payload of a Pub/Sub event.
+	// // See https://cloud.google.com/functions/docs/calling/pubsub.
+	// type PubSubMessage struct {
+	// 	Data []byte `json:"data"`
+	// }
 
-	_, _, err = client.Collection("giphys").Add(ctx, gif)
-	if err != nil {
-		http.Error(w, "Error: internal error - could not create gif request entry in Firestore", http.StatusInternalServerError)
-		return
-	}
+	// // Create Pub/Sub client
+	// pubsubClient, err := pubsub.NewClient(newCtx, "jaspergif")
+	// if err != nil {
+	// 	return err
+	// }
 
-	// PubSubMessage is the payload of a Pub/Sub event.
-	// See https://cloud.google.com/functions/docs/calling/pubsub.
-	type PubSubMessage struct {
-		Data []byte `json:"data"`
-	}
+	// pubsubTopic := pubsubClient.Topic("new-giphy")
 
-	// Create Pub/Sub client
-	pubsubClient, err := pubsub.NewClient(ctx, "jaspergif")
-	if err != nil {
-		http.Error(w, "Error: internal error - could not create Pub/Sub Client", http.StatusInternalServerError)
-		return
-	}
+	// gifData, err := json.Marshal(gif)
+	// if err != nil {
+	// 	return err
+	// }
 
-	pubsubTopic := pubsubClient.Topic("new-giphy")
-
-	gifData, err := json.Marshal(gif)
-	if err != nil {
-		http.Error(w, "Error: internal error - could not marshal GiphyGif instance", http.StatusInternalServerError)
-		return
-	}
-
-	pubResult := pubsubTopic.Publish(r.Context(), &pubsub.Message{Data: gifData})
-	if _, err := pubResult.Get(r.Context()); err != nil {
-		http.Error(w, "Error: internal error - could not publish Pub/Sub topic 'new-giphy'", http.StatusInternalServerError)
-		return
-	}
+	// pubResult := pubsubTopic.Publish(r.Context(), &pubsub.Message{Data: gifData})
+	// if _, err := pubResult.Get(r.Context()); err != nil {
+	// 	return err
+	// }
 }
