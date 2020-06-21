@@ -61,8 +61,14 @@ github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGX
 github.com/codedbypm/jaspergify v0.0.0-20200601105739-1b669f7e3041 h1:WSFmoySQijkckaPGCmsiZjEHmCqvDlwi6cyfRUrKCY8=
 github.com/codedbypm/jaspergify v0.0.0-20200613163007-99c0c6d65a05 h1:di2UnEIql2HYvbCJi3NhMQ8Pcdyt0yu1tFad7nkcMcw=
 github.com/codedbypm/jaspergify v0.0.0-20200613195128-6b1e14ca1e59 h1:TF7ETyAJkxe54yFPZHoScZijdAcwmaFaZfjOa/SGcR4=
+github.com/codedbypm/jaspergify v0.0.0-20200620185237-0e7a44166d89 h1:n/SYhtSYa7weILvTpvCCnP1sOLPvMqx+I/4kU9IXguk=
+github.com/codedbypm/jaspergify v0.0.0-20200620185237-0e7a44166d89/go.mod h1:AuEKE5nF52nEXHLqWhGrnU8qgZ3Y3JUauCIB9cD2+XQ=
+github.com/codedbypm/jaspergify/decode v0.0.0-20200620140609-e90fd1b522b2/go.mod h1:nbnEWFmxRbUVc0HHP+r7Ihpau4VaALnpy2nW3ykJJ9s=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613163007-99c0c6d65a05 h1:jqMM7dOasYOvzELL8ZG8j4FVBuOq/UlV1R7Ha391nT8=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613163007-99c0c6d65a05/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
+github.com/codedbypm/jaspergify/entry v0.0.0-20200613214419-6b18f505a53a/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
+github.com/codedbypm/jaspergify/entry v0.0.0-20200620140609-e90fd1b522b2/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
+github.com/codedbypm/jaspergify/fetch v0.0.0-20200620140609-e90fd1b522b2/go.mod h1:xTIbJ5gj1fe8Q4pR1vnuFzNl+weUfLdVEeKzeQAMSsU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=

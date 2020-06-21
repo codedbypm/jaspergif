@@ -19,19 +19,23 @@ type FirestoreEvent struct {
 
 // FirestoreValue holds Firestore fields.
 type FirestoreValue struct {
-	CreateTime time.Time               `json:"createTime"`
-	Fields     model.JaspergifyRequest `json:"fields"`
-	Name       string                  `json:"name"`
-	UpdateTime time.Time               `json:"updateTime"`
+	CreateTime time.Time     `json:"createTime"`
+	Fields     model.Request `json:"fields"`
+	Name       string        `json:"name"`
+	UpdateTime time.Time     `json:"updateTime"`
 }
 
 // Fetch is the next new thing
 func Fetch(ctx context.Context, e FirestoreEvent) error {
 	fullPath := strings.Split(e.Value.Name, "/documents/")[1]
 	pathParts := strings.Split(fullPath, "/")
-	collection := pathParts[0]
-	doc := strings.Join(pathParts[1:], "/")
-	curValue := e.Value.Fields.Original.StringValue
+	println(pathParts)
+
+	return nil
+
+	// collection := pathParts[0]
+	// doc := strings.Join(pathParts[1:], "/")
+	// curValue := e.Value.Fields.Original.StringValue
 
 	// giphyIdentifier := payload["GiphyIdentifier"].(string)
 

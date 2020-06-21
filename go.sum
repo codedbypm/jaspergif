@@ -63,6 +63,7 @@ github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDk
 github.com/cloudevents/sdk-go v1.0.0 h1:gS5I0s2qPmdc4GBPlUmzZU7RH30BaiOdcRJ1RkXnPrc=
 github.com/cloudevents/sdk-go v1.0.0/go.mod h1:3TkmM0cFqkhCHOq5JzzRU/RxRkwzoS8TZ+G448qVTog=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
+github.com/codedbypm/jaspergify v0.0.0-20200620185237-0e7a44166d89/go.mod h1:AuEKE5nF52nEXHLqWhGrnU8qgZ3Y3JUauCIB9cD2+XQ=
 github.com/codedbypm/jaspergify/decode v0.0.0-20200620140609-e90fd1b522b2 h1:UbjyOkYabIv7nb4zu0sO5xGUhvAfY7ygurzAcMjtHqw=
 github.com/codedbypm/jaspergify/decode v0.0.0-20200620140609-e90fd1b522b2/go.mod h1:nbnEWFmxRbUVc0HHP+r7Ihpau4VaALnpy2nW3ykJJ9s=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613163007-99c0c6d65a05/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
