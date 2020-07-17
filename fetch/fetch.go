@@ -2,10 +2,11 @@ package fetch
 
 import (
 	"context"
-	"strings"
+	"fmt"
+	"log"
 	"time"
 
-	"github.com/codedbypm/jaspergify/model"
+	"cloud.google.com/go/functions/metadata"
 )
 
 // FirestoreEvent is the payload of a Firestore event.
@@ -19,18 +20,21 @@ type FirestoreEvent struct {
 
 // FirestoreValue holds Firestore fields.
 type FirestoreValue struct {
-	CreateTime time.Time     `json:"createTime"`
-	Fields     model.Request `json:"fields"`
-	Name       string        `json:"name"`
-	UpdateTime time.Time     `json:"updateTime"`
+	CreateTime time.Time   `json:"createTime"`
+	Fields     interface{} `json:"fields"`
+	Name       string      `json:"name"`
+	UpdateTime time.Time   `json:"updateTime"`
 }
 
-// Fetch is the next new thing
+// Fetch is triggered by a Firestore event
 func Fetch(ctx context.Context, e FirestoreEvent) error {
-	fullPath := strings.Split(e.Value.Name, "/documents/")[1]
-	pathParts := strings.Split(fullPath, "/")
-	println(pathParts)
-
+	meta, err := metadata.FromContext(ctx)
+	if err != nil {
+		return fmt.Errorf("metadata.FromContext: %v", err)
+	}
+	log.Printf("Function triggered by change to: %v", meta.Resource)
+	log.Printf("Old value: %+v", e.OldValue)
+	log.Printf("New value: %+v", e.Value)
 	return nil
 
 	// collection := pathParts[0]
