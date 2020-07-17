@@ -14,14 +14,11 @@
             "name": "gcr.io/cloud-builders/gcloud",
             "args": [
                 "functions", 
-                "deploy",  
-                "$_FUNCTION_NAME", 
+                "deploy", "$_FUNCTION_NAME", 
                 "--region=europe-west1",
                 "--runtime=go113",
-                "--trigger-event", 
-                "providers/cloud.firestore/eventTypes/document.create",
-                "--trigger-resource",
-                "projects/jaspergif/databases/(default)/documents/requests/{request}",
+                "--trigger-event", "$_TRIGGER_EVENT",
+                "--trigger-resource", "$_TRIGGER_RESOURCE",
             ],
             "dir": "${_WORKING_DIR}"
         }
