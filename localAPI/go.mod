@@ -8,9 +8,12 @@ replace github.com/codedbypm/jaspergify/fetch => /Users/paolodev/Projects/jasper
 
 replace github.com/codedbypm/jaspergify/decode => /Users/paolodev/Projects/jaspergify/decode
 
+replace github.com/codedbypm/jaspergify/model => /Users/paolodev/Projects/jaspergify/model
+
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.0.1
 	github.com/codedbypm/jaspergify/decode v0.0.0-20200717212615-7190fa11aa88
 	github.com/codedbypm/jaspergify/entry v0.0.0-20200717212615-7190fa11aa88
-	github.com/codedbypm/jaspergify/fetch v0.0.0-20200717212615-7190fa11aa88
+	github.com/codedbypm/jaspergify/fetch v0.0.0-20200620140609-e90fd1b522b2
+	github.com/codedbypm/jaspergify/model v0.0.0-00010101000000-000000000000 // indirect
 )

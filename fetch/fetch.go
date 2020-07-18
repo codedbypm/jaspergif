@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net/http"
 	"time"
 
 	"cloud.google.com/go/functions/metadata"
@@ -27,7 +28,10 @@ type FirestoreValue struct {
 }
 
 // Fetch is triggered by a Firestore event
-func Fetch(ctx context.Context, e FirestoreEvent) error {
+func Fetch(w http.ResponseWriter, r *http.Request) {
+}
+
+func onFireStoreWrite(ctx context.Context, e FirestoreEvent) error {
 	meta, err := metadata.FromContext(ctx)
 	if err != nil {
 		return fmt.Errorf("metadata.FromContext: %v", err)
