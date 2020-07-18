@@ -12,7 +12,7 @@ import (
 
 func main() {
 	funcframework.RegisterHTTPFunction("/enter", entry.Entry)
-	funcframework.RegisterEventFunction("/fetch", fetch.OnFirestoreWrite)
+	funcframework.RegisterEventFunction("/fetch", fetch.OnCreateRequest)
 	funcframework.RegisterHTTPFunction("/decode", decode.Decode)
 
 	port := "8080"

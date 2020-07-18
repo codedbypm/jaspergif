@@ -26,8 +26,8 @@ type FirestoreValue struct {
 	UpdateTime time.Time   `json:"updateTime"`
 }
 
-// OnFirestoreWrite is the new awesome thing
-func OnFirestoreWrite(ctx context.Context, e FirestoreEvent) error {
+// OnCreateRequest is the new awesome thing
+func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 	meta, err := metadata.FromContext(ctx)
 	if err != nil {
 		return fmt.Errorf("metadata.FromContext: %v", err)
