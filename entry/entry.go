@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
-	"cloud.google.com/go/pubsub"
 	"github.com/codedbypm/jaspergify/model"
 )
 
@@ -58,30 +57,9 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		Status:          model.Received,
 	}
 
-	gif, _, err := client.Collection("requests").Add(ctx, request)
+	_, _, err = client.Collection("requests").Add(ctx, request)
 	if err != nil {
 		http.Error(w, "Error: internal error - could not create gif request entry in Firestore", http.StatusInternalServerError)
-		return
-	}
-
-	gifData, err := json.Marshal(gif)
-	if err != nil {
-		http.Error(w, "Error: internal error - could not marshal new gif request entry", http.StatusInternalServerError)
-		return
-	}
-
-	// Create Pub/Sub client
-	pubsubClient, err := pubsub.NewClient(ctx, "jaspergif")
-	if err != nil {
-		http.Error(w, "Error: internal error - could not create Pub/Sub Client", http.StatusInternalServerError)
-		return
-	}
-
-	pubsubTopic := pubsubClient.Topic("new-gif-request")
-
-	res := pubsubTopic.Publish(r.Context(), &pubsub.Message{Data: gifData})
-	if _, err := res.Get(r.Context()); err != nil {
-		http.Error(w, "Error: internal error - could not publish Pub/Sub topic", http.StatusInternalServerError)
 		return
 	}
 }
