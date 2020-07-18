@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"net/http"
 	"time"
 
 	"cloud.google.com/go/functions/metadata"
@@ -27,10 +26,7 @@ type FirestoreValue struct {
 	UpdateTime time.Time   `json:"updateTime"`
 }
 
-// Fetch is triggered by a Firestore event
-func Fetch(w http.ResponseWriter, r *http.Request) {
-}
-
+// OnFirestoreWrite is the new awesome thing
 func OnFirestoreWrite(ctx context.Context, e FirestoreEvent) error {
 	meta, err := metadata.FromContext(ctx)
 	if err != nil {
