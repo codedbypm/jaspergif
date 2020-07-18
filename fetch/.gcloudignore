@@ -1,5 +1,5 @@
 .gcloudignore
-cmd/*
+cmd
 *_test.go
 .vscode
 *.code-workspace
