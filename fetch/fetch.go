@@ -31,7 +31,7 @@ type FirestoreValue struct {
 func Fetch(w http.ResponseWriter, r *http.Request) {
 }
 
-func onFireStoreWrite(ctx context.Context, e FirestoreEvent) error {
+func OnFirestoreWrite(ctx context.Context, e FirestoreEvent) error {
 	meta, err := metadata.FromContext(ctx)
 	if err != nil {
 		return fmt.Errorf("metadata.FromContext: %v", err)
