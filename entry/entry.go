@@ -52,7 +52,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	request := model.JaspergifyRequest{
+	request := model.Request{
 		GiphyIdentifier: pathComponents[2],
 		Timestamp:       time.Now(),
 		Status:          model.Received,
