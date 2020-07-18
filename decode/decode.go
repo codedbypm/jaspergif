@@ -32,7 +32,7 @@ func Decode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response, err := http.Get(gifMp4.Mp4URL)
+	response, err := http.Get(gifMp4.url)
 	defer response.Body.Close()
 
 	gif, err := gif.DecodeAll(response.Body)
