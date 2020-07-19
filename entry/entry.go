@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
+	"github.com/codedbypm/jaspergify/log"
 	"github.com/codedbypm/jaspergify/model"
 )
 
@@ -28,11 +29,13 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 
 	bytes, err := ioutil.ReadAll(r.Body)
 	if err != nil {
+		log.Error(err)
 		http.Error(w, "Error: bad request - invalid request", http.StatusBadRequest)
 		return
 	}
 
 	if err := json.Unmarshal(bytes, &gifInfo); err != nil {
+		log.Error(err)
 		http.Error(w, "Error: bad request - invalid body", http.StatusBadRequest)
 		return
 	}
@@ -40,6 +43,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 	gifURL, err := url.Parse(gifInfo.URL)
 	pathComponents := strings.Split(gifURL.Path, "/")
 	if err != nil {
+		log.Error(err)
 		http.Error(w, "Error: bad request - missing required 'cid' query item", http.StatusBadRequest)
 		return
 	}
@@ -47,6 +51,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 	client, err := firestore.NewClient(ctx, "jaspergif")
 	if err != nil {
+		log.Error(err)
 		http.Error(w, "Error: internal error - could not create Firestore client", http.StatusInternalServerError)
 		return
 	}
@@ -59,6 +64,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 
 	_, _, err = client.Collection("requests").Add(ctx, request)
 	if err != nil {
+		log.Error(err)
 		http.Error(w, "Error: internal error - could not create gif request entry in Firestore", http.StatusInternalServerError)
 		return
 	}
