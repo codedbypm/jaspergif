@@ -35,16 +35,17 @@ type FirestoreValue struct {
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 
 	var giphyIdentifier = e.Value.Fields.GiphyIdentifier
+	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
 	// Create Giphy request
-	res, err := http.Get("https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT")
+	res, err := http.Get(url)
 	if err != nil {
 		log.Error(err)
 		return err
 	}
 
 	if res.StatusCode != http.StatusOK {
-		err = errors.New("Error: not found - The request gif could not be found on api.giphy.com")
+		err = errors.New("Error: not found - The request gif could not be found on api.giphy.com. (" + url + ")")
 		log.Error(err)
 		return err
 	}

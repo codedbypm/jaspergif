@@ -43,7 +43,6 @@ func Debug(entry string) {
 
 // Error ...
 func Error(e error) {
-	log.Println(e)
 	localLogger.Println(e)
 	cloudLogger.StandardLogger(logging.Error).Println(e)
 }
