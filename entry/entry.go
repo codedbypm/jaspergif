@@ -54,7 +54,7 @@ func Entry(w http.ResponseWriter, r *http.Request) {
 	request := model.Request{
 		GiphyIdentifier: pathComponents[2],
 		Timestamp:       time.Now(),
-		Status:          model.Received.String(),
+		Status:          model.Received,
 	}
 
 	_, _, err = client.Collection("requests").Add(ctx, request)

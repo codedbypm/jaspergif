@@ -9,18 +9,14 @@ type Request struct {
 	Status          RequestStatus `firestore:"status"`
 }
 
-// RequestStatus is the status of a Jaspergify request
-type RequestStatus int
+// RequestStatus models the status of a request to Jaspergify a gif
+type RequestStatus string
 
 const (
 	// Received means the request has been received
-	Received RequestStatus = iota
+	Received RequestStatus = "received"
 	// Ongoing means the request started but not yet finished
-	Ongoing
+	Ongoing = "ongoing"
 	// Done means the request has been executed
-	Done
+	Done = "done"
 )
-
-func (s RequestStatus) String() string {
-	return [...]string{"Received", "Ongoing", "Done"}[s]
-}

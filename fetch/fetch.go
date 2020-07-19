@@ -32,6 +32,7 @@ type FirestoreValue struct {
 
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
+
 	var giphyIdentifier = e.Value.Fields.GiphyIdentifier
 
 	// Create Giphy request
