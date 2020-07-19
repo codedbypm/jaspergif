@@ -21,6 +21,6 @@ func main() {
 	}
 
 	if err := funcframework.Start(port); err != nil {
-		log.Fatalf("funcframework.Start: %v\n", err)
+		log.Println(err)
 	}
 }

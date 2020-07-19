@@ -2,14 +2,11 @@ package log
 
 import (
 	"context"
-	"encoding/json"
-	log "log"
+	"log"
+	"os"
 
 	"cloud.google.com/go/logging"
 )
-
-type logger struct {
-}
 
 // JaspergifyLogger is the default agora logger
 type JaspergifyLogger interface {
@@ -24,8 +21,8 @@ var cloudLogger *logging.Logger
 var localLogger *log.Logger
 
 func init() {
+	localLogger = log.New(os.Stdout, "[Local]: ", 0)
 	cloudLogger = createGCloudLogger()
-	localLogger = &log.Logger{}
 }
 
 func createGCloudLogger() *logging.Logger {
@@ -33,22 +30,20 @@ func createGCloudLogger() *logging.Logger {
 	if err != nil {
 		log.Fatalf("Failed to create client: %v", err)
 	}
-	return loggingClient.Logger("jaspergify-local")
+
+	logName := "jaspergify-log"
+	return loggingClient.Logger(logName)
 }
 
-// Debug ...
-func Debug(entry []byte) {
-	cloudLogger.Log(logging.Entry{
-		Payload: json.RawMessage(entry),
-	})
-	indentedBytes, _ := json.MarshalIndent(entry, "", "    ")
-	log.Println(string(indentedBytes))
+// Debug is
+func Debug(entry string) {
+	localLogger.Println(entry)
+	cloudLogger.StandardLogger(logging.Debug).Println(entry)
 }
 
 // Error ...
 func Error(e error) {
-	localLogger.Println(e.Error())
-	// cloudLogger.Log(logging.Entry{
-	// 	e.Error()
-	// })
+	log.Println(e)
+	localLogger.Println(e)
+	cloudLogger.StandardLogger(logging.Error).Println(e)
 }
