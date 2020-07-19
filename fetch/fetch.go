@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
+	"github.com/codedbypm/jaspergify/log"
 	"github.com/codedbypm/jaspergify/model"
 )
 
@@ -38,21 +39,26 @@ func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 	// Create Giphy request
 	res, err := http.Get("https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT")
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
 	if res.StatusCode != http.StatusOK {
-		return errors.New("Error: not found - The request gif could not be found on api.giphy.com")
+		err = errors.New("Error: not found - The request gif could not be found on api.giphy.com")
+		log.Error(err)
+		return err
 	}
 
 	bytes, err := ioutil.ReadAll(res.Body)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
 	var temnpGif map[string]interface{}
 	err = json.Unmarshal(bytes, &temnpGif)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
@@ -63,6 +69,7 @@ func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 	frames := original["frames"].(string)
 	framesInt, err := strconv.Atoi(frames)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 	originalMp4 := images["original_mp4"].(map[string]interface{})
@@ -70,6 +77,7 @@ func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 	size := originalMp4["mp4_size"].(string)
 	sizeInt, err := strconv.Atoi(size)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
@@ -83,11 +91,13 @@ func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 	newCtx := context.Background()
 	client, err := firestore.NewClient(newCtx, "jaspergif")
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
 	_, _, err = client.Collection("giphys").Add(newCtx, gif)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 
