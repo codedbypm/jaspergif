@@ -25,16 +25,17 @@ type FirestoreEvent struct {
 
 // FirestoreValue holds Firestore fields.
 type FirestoreValue struct {
-	CreateTime time.Time     `json:"createTime"`
-	Fields     model.Request `json:"fields"`
-	Name       string        `json:"name"`
-	UpdateTime time.Time     `json:"updateTime"`
+	CreateTime time.Time   `json:"createTime"`
+	Fields     interface{} `json:"fields"`
+	Name       string      `json:"name"`
+	UpdateTime time.Time   `json:"updateTime"`
 }
 
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 
-	var giphyIdentifier = e.Value.Fields.GiphyIdentifier
+	println(e.Value.Fields)
+	var giphyIdentifier = "paolo"
 	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
 	// Create Giphy request
