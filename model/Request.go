@@ -4,9 +4,9 @@ import "time"
 
 // Request models a request to Jaspergify a gif
 type Request struct {
-	GiphyIdentifier string    `firestore:"giphyId"`
-	Timestamp       time.Time `firestore:"time"`
-	Status          string    `firestore:"status"`
+	GiphyIdentifier string        `firestore:"giphyId"`
+	Timestamp       time.Time     `firestore:"time"`
+	Status          RequestStatus `firestore:"status"`
 }
 
 // RequestStatus models the status of a request to Jaspergify a gif
