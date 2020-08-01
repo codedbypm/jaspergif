@@ -16,8 +16,8 @@ import (
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e model.FirestoreEvent) error {
 
-	var giphyIdentifier = e.Value.Fields.GiphyIdentifier.Value
-	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
+	var firestoreRequest = e.Value.Fields.(model.FirestoreRequest)
+	var url = "https://api.giphy.com/v1/gifs/" + firestoreRequest.GiphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
 	// Create Giphy request
 	res, err := http.Get(url)

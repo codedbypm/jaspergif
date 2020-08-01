@@ -3,9 +3,8 @@ module github.com/codedbypm/jaspergify/entry
 go 1.13
 
 require (
-	cloud.google.com/go/firestore v1.2.0
-	cloud.google.com/go/pubsub v1.3.1
-	github.com/GoogleCloudPlatform/functions-framework-go v1.0.1
-	github.com/codedbypm/jaspergify/log v0.0.0-20200801041534-239a573bc142
-	github.com/codedbypm/jaspergify/model v0.0.0-20200719110121-d532c6a60a48
+	cloud.google.com/go/firestore v1.3.0
+	github.com/codedbypm/jaspergify/log v0.0.0-20200801132416-a005cf7e1b01
+	github.com/codedbypm/jaspergify/model v0.0.0-20200801133350-a6c71f6218a9
+	golang.org/x/tools v0.0.0-20200731060945-b5fad4ed8dd6 // indirect
 )
