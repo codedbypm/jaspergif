@@ -17,6 +17,5 @@ require (
 	github.com/codedbypm/jaspergify/decode v0.0.0-20200717212615-7190fa11aa88
 	github.com/codedbypm/jaspergify/entry v0.0.0-20200717212615-7190fa11aa88
 	github.com/codedbypm/jaspergify/fetch v0.0.0-20200620140609-e90fd1b522b2
-	github.com/codedbypm/jaspergify/log v0.0.0-00010101000000-000000000000
-	github.com/codedbypm/jaspergify/model v0.0.0-00010101000000-000000000000 // indirect
+	github.com/codedbypm/jaspergify/log v0.0.0-20200801044421-d9283cd85e5c
 )
