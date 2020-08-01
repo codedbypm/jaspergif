@@ -18,12 +18,12 @@ type FirestoreRequest struct {
 
 // StringValue is awesome
 type StringValue struct {
-	StringValue string `json:"stringValue"`
+	Value string `json:"stringValue"`
 }
 
 // TimestampValue is awesome
 type TimestampValue struct {
-	TimestampValue time.Time `json:"timestampValue"`
+	Value time.Time `json:"timestampValue"`
 }
 
 // RequestStatus models the status of a request to Jaspergify a gif
