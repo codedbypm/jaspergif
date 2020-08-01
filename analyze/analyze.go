@@ -2,10 +2,13 @@
 package decode
 
 import (
-	"net/http"
+	"context"
+
+	"github.com/codedbypm/jaspergify/model"
 )
 
-// Analyze is the new amazing thing
-func Analyze(w http.ResponseWriter, r *http.Request) {
+// OnFetchGif is the new awesome thing
+func OnFetchGif(ctx context.Context, e model.FirestoreEvent) error {
 
+	return nil
 }
