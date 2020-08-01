@@ -59,6 +59,7 @@ github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDk
 github.com/cloudevents/sdk-go v1.0.0/go.mod h1:3TkmM0cFqkhCHOq5JzzRU/RxRkwzoS8TZ+G448qVTog=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/codedbypm/jaspergify v0.0.0-20200613214419-6b18f505a53a h1:qEowWmZ4vPsD2CgjzbfXWHkPzGI0sB2dJlFw9/iMm2U=
+github.com/codedbypm/jaspergify v0.0.0-20200801132416-a005cf7e1b01 h1:3VwOuQLfji3B7BROk42oLGovicbX70dfZth7nCOEbvA=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613214419-6b18f505a53a h1:sMDIJdYUMKmF7YxtTq83xBiD9gAkzLWjrkV1jmjzc5A=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613214419-6b18f505a53a/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

@@ -1,4 +1,4 @@
-module github.com/codedbypm/jaspergify/decode
+module github.com/codedbypm/jaspergify/analyze
 
 go 1.13
 
