@@ -11,9 +11,9 @@ type Request struct {
 
 // FirestoreRequest is awesome
 type FirestoreRequest struct {
-	GiphyIdentifier StringValue    `firestore:"giphyId"`
-	Timestamp       TimestampValue `firestore:"time"`
-	Status          StringValue    `firestore:"status"`
+	GiphyIdentifier StringValue        `json:"giphyId"`
+	Timestamp       TimestampValue     `json:"time"`
+	Status          RequestStatusValue `json:"status"`
 }
 
 // StringValue is awesome
@@ -24,6 +24,11 @@ type StringValue struct {
 // TimestampValue is awesome
 type TimestampValue struct {
 	Value time.Time `json:"timestampValue"`
+}
+
+// RequestStatusValue is awesome
+type RequestStatusValue struct {
+	Value RequestStatus `json:"stringValue"`
 }
 
 // RequestStatus models the status of a request to Jaspergify a gif
