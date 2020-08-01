@@ -7,29 +7,11 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
-	"time"
 
 	"cloud.google.com/go/firestore"
 	"github.com/codedbypm/jaspergify/log"
 	"github.com/codedbypm/jaspergify/model"
 )
-
-// FirestoreEvent is the payload of a Firestore event.
-type FirestoreEvent struct {
-	OldValue   FirestoreValue `json:"oldValue"`
-	Value      FirestoreValue `json:"value"`
-	UpdateMask struct {
-		FieldPaths []string `json:"fieldPaths"`
-	} `json:"updateMask"`
-}
-
-// FirestoreValue holds Firestore fields.
-type FirestoreValue struct {
-	CreateTime time.Time              `json:"createTime"`
-	Fields     model.FirestoreRequest `json:"fields"`
-	Name       string                 `json:"name"`
-	UpdateTime time.Time              `json:"updateTime"`
-}
 
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
