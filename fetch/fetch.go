@@ -34,13 +34,6 @@ type FirestoreValue struct {
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 
-	log.Debug("FirestoreEvent")
-	log.Debug(e)
-	log.Debug("FirestoreEvent.Value")
-	log.Debug(e.Value)
-	log.Debug("FirestoreEvent.Value.Fields")
-	log.Debug(e.Value.Fields)
-
 	var giphyIdentifier = e.Value.Fields.GiphyIdentifier.Value
 	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
