@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
-	goLog "log"
 	"net/http"
 	"strconv"
 	"time"
@@ -35,7 +34,8 @@ type FirestoreValue struct {
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e FirestoreEvent) error {
 
-	goLog.Println(e.Value.Fields)
+	log.Debug(e)
+
 	var giphyIdentifier = e.Value.Fields.GiphyIdentifier.Value
 	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
