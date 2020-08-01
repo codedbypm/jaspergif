@@ -73,10 +73,14 @@ github.com/codedbypm/jaspergify/log v0.0.0-20200801044421-d9283cd85e5c h1:e7B/Zn
 github.com/codedbypm/jaspergify/log v0.0.0-20200801044421-d9283cd85e5c/go.mod h1:hPAbAIcVSoPtzzLg3MbaZqFQSguHzs7BRWRu82g0Ea8=
 github.com/codedbypm/jaspergify/log v0.0.0-20200801102158-b286ab2bfaca h1:5Lf+li5XYJYx6ixvK4ENC4FofdxZWYAtTnK83b59S4Q=
 github.com/codedbypm/jaspergify/log v0.0.0-20200801102158-b286ab2bfaca/go.mod h1:hPAbAIcVSoPtzzLg3MbaZqFQSguHzs7BRWRu82g0Ea8=
+github.com/codedbypm/jaspergify/log v0.0.0-20200801120551-e6248257c84d h1:iLPtcZlbFBy8Jr5IbSAopujNbyXrDsVElZyujIYnidg=
+github.com/codedbypm/jaspergify/log v0.0.0-20200801120551-e6248257c84d/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801044421-d9283cd85e5c h1:K7LYI3R5gSreezQHoVj18nVjn2RR5wocFySpodmAceA=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801044421-d9283cd85e5c/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801102158-b286ab2bfaca h1:JJLnEilM2KjjgTVhCaIj5X2X6L9DLJ77F9Z02oXKG3w=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801102158-b286ab2bfaca/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200801120551-e6248257c84d h1:hzg1vxeA7W7CQCiV4l48ZzyotkVwNe30+Fv9P6dpKUU=
+github.com/codedbypm/jaspergify/model v0.0.0-20200801120551-e6248257c84d/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
@@ -153,6 +157,7 @@ github.com/gorilla/mux v1.6.2/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2z
 github.com/grpc-ecosystem/grpc-gateway v1.8.5/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
+github.com/hashicorp/golang-lru v0.5.4/go.mod h1:iADmTwqILo4mZ8BN3D2Q6+9jd8WM5uGBxy+E8yxSoD4=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=

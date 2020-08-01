@@ -11,9 +11,9 @@ type Request struct {
 
 // FirestoreRequest is awesome
 type FirestoreRequest struct {
-	GiphyIdentifier StringValue        `json:"giphyId"`
-	Timestamp       TimestampValue     `json:"time"`
-	Status          RequestStatusValue `json:"status"`
+	GiphyIdentifier string        `json:"giphyId"`
+	Timestamp       time.Time     `json:"time"`
+	Status          RequestStatus `json:"status"`
 }
 
 // StringValue is awesome
