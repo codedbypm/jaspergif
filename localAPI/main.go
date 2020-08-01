@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	funcframework.RegisterHTTPFunction("/enter", entry.Entry)
+	funcframework.RegisterHTTPFunction("/entry", entry.Entry)
 	funcframework.RegisterEventFunction("/fetch", fetch.OnCreateRequest)
 	funcframework.RegisterHTTPFunction("/decode", decode.Decode)
 
