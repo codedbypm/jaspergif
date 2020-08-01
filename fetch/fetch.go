@@ -16,7 +16,11 @@ import (
 // OnCreateRequest is the new awesome thing
 func OnCreateRequest(ctx context.Context, e model.FirestoreEvent) error {
 
-	var firestoreRequest = e.Value.Fields.(model.FirestoreRequest)
+	firestoreRequest, ok := e.Value.Fields.(model.FirestoreRequest)
+	if !ok {
+		log.Debug("Type assertion failed")
+		return nil
+	}
 	var url = "https://api.giphy.com/v1/gifs/" + firestoreRequest.GiphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
 	// Create Giphy request
