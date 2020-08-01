@@ -36,9 +36,9 @@ func createGCloudLogger() *logging.Logger {
 }
 
 // Debug is
-func Debug(entry string) {
-	localLogger.Println(entry)
-	cloudLogger.StandardLogger(logging.Debug).Println(entry)
+func Debug(v ...interface{}) {
+	localLogger.Println(v)
+	cloudLogger.StandardLogger(logging.Debug).Println(v)
 }
 
 // Error ...
