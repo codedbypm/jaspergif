@@ -5,15 +5,15 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	"github.com/codedbypm/jaspergify/decode"
 	"github.com/codedbypm/jaspergify/entry"
 	"github.com/codedbypm/jaspergify/fetch"
+	"github.com/codedbypm/jaspergify/upload"
 )
 
 func main() {
 	funcframework.RegisterHTTPFunction("/entry", entry.Entry)
 	funcframework.RegisterEventFunction("/fetch", fetch.OnCreateRequest)
-	funcframework.RegisterHTTPFunction("/decode", decode.Decode)
+	funcframework.RegisterEventFunction("/upload", upload.OnFetchGif)
 
 	port := "8080"
 	if envPort := os.Getenv("PORT"); envPort != "" {
