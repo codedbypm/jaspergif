@@ -55,6 +55,12 @@ github.com/codedbypm/jaspergify/log v0.0.0-20200801161528-5ab1d0fd954f h1:smJB5b
 github.com/codedbypm/jaspergify/log v0.0.0-20200801161528-5ab1d0fd954f/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/log v0.0.0-20200801165042-e372cd21ecfe h1:2NxomDMb+ZOApemDRji/WU8mG6MHUrZoXH2/Phn11Ls=
 github.com/codedbypm/jaspergify/log v0.0.0-20200801165042-e372cd21ecfe/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergify/log v0.0.0-20200801173547-3e5d6f86b484 h1:g796LT2TVXIZU75A8FpkWrR9NnaTjLlKohvYhpTDw3c=
+github.com/codedbypm/jaspergify/log v0.0.0-20200801173547-3e5d6f86b484/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergify/log v0.0.0-20200802133259-712c378554ec h1:lKguPtd0kGulkcp2JQqtfLD3REFL/KMg/12tWZSzN0Y=
+github.com/codedbypm/jaspergify/log v0.0.0-20200802133259-712c378554ec/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergify/log v0.0.0-20200802143030-f6b289911c27 h1:NHslNwNtQ4cAHnMHTxhrFWzyh6sNTjR0hHuOo3jhH+0=
+github.com/codedbypm/jaspergify/log v0.0.0-20200802143030-f6b289911c27/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801133350-a6c71f6218a9 h1:InYPYCN8rveUstt+WFwvhyb9wt1L3Jq1ZikrjHQEK6U=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801133350-a6c71f6218a9/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801134812-9869f68f5b41 h1:C9u0p77t5+7Vq/qB0q/xNSRLGNuy3PFgzpeACP4iDmE=
@@ -63,6 +69,12 @@ github.com/codedbypm/jaspergify/model v0.0.0-20200801161528-5ab1d0fd954f h1:3ShY
 github.com/codedbypm/jaspergify/model v0.0.0-20200801161528-5ab1d0fd954f/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801165042-e372cd21ecfe h1:MgRwkiBwdTYXEDTQP7ndI/mRiBTCg2RFw2z+I8W7muU=
 github.com/codedbypm/jaspergify/model v0.0.0-20200801165042-e372cd21ecfe/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200801173547-3e5d6f86b484 h1:HQEITX67eha/uM7fMjD9vZeW5N4QYGACrVKvHL478Q4=
+github.com/codedbypm/jaspergify/model v0.0.0-20200801173547-3e5d6f86b484/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200802133259-712c378554ec h1:hV/Dl66QR0JH7S+DCijZG1EswtfoXD6XnMg5AsUzxUc=
+github.com/codedbypm/jaspergify/model v0.0.0-20200802133259-712c378554ec/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200802143030-f6b289911c27 h1:jAFRXiBWImXRdjkZbOrsZeqfA3QtYUSOxUrL83J4gpM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200802143030-f6b289911c27/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
@@ -248,6 +260,8 @@ golang.org/x/sys v0.0.0-20200515095857-1151b9dac4a9/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200523222454-059865788121/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1 h1:sIky/MyNRSHTrdxfsiUSS4WIAMvInbeXljJz+jDjeYE=
 golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200802091954-4b90ce9b60b3 h1:qDJKu1y/1SjhWac4BQZjLljqvqiWUhjmDMnonmVGDAU=
+golang.org/x/sys v0.0.0-20200802091954-4b90ce9b60b3/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
