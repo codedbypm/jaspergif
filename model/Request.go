@@ -9,13 +9,6 @@ type Request struct {
 	Status          RequestStatus `firestore:"status"`
 }
 
-// FirestoreRequest is awesome
-type FirestoreRequest struct {
-	GiphyIdentifier string        `json:"giphyId"`
-	Timestamp       time.Time     `json:"time"`
-	Status          RequestStatus `json:"status"`
-}
-
 // RequestStatus models the status of a request to Jaspergify a gif
 type RequestStatus string
 
