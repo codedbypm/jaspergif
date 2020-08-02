@@ -56,9 +56,8 @@ func OnCreateRequest(ctx context.Context, e model.FirestoreRequestEvent) error {
 		log.Error(err)
 		return err
 	}
-	originalMp4 := images["original_mp4"].(map[string]interface{})
-	mp4URL := originalMp4["mp4"].(string)
-	size := originalMp4["mp4_size"].(string)
+	mp4URL := original["mp4"].(map[string]interface{})
+	size := original["mp4_size"].(string)
 	sizeInt, err := strconv.Atoi(size)
 	if err != nil {
 		log.Error(err)
