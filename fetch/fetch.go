@@ -14,13 +14,11 @@ import (
 )
 
 // OnCreateRequest is the new awesome thing
-func OnCreateRequest(ctx context.Context, e model.FirestoreEvent) error {
+func OnCreateRequest(ctx context.Context, e model.FirestoreRequestEvent) error {
 
-	fields, _ := e.Value.Fields.(map[string]interface{})
-	var identifierInterface = fields["giphyId"]
-	identifierI, _ := identifierInterface.(map[string]string)
-	var identifier = identifierI["stringValue"]
-	var url = "https://api.giphy.com/v1/gifs/" + identifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
+	var giphyIdentifier = e.Value.Fields.GiphyIdentifier.Value
+
+	var url = "https://api.giphy.com/v1/gifs/" + giphyIdentifier + "?api_key=QuCgTOvpRJlHx6QMtNCYTqfL5Efj0vgT"
 
 	// Create Giphy request
 	res, err := http.Get(url)
