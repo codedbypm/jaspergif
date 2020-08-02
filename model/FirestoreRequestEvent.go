@@ -21,18 +21,3 @@ type FirestoreRequest struct {
 	Timestamp       TimestampValue     `json:"time"`
 	Status          RequestStatusValue `json:"status"`
 }
-
-// StringValue is awesome
-type StringValue struct {
-	Value string `json:"stringValue"`
-}
-
-// TimestampValue is awesome
-type TimestampValue struct {
-	Value time.Time `json:"timestampValue"`
-}
-
-// RequestStatusValue is awesome
-type RequestStatusValue struct {
-	Value RequestStatus `json:"stringValue"`
-}
