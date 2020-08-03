@@ -3,6 +3,7 @@ package upload
 
 import (
 	"context"
+	"io/ioutil"
 	"net/http"
 	"path"
 	"time"
@@ -25,8 +26,11 @@ func OnFetchGif(ctx context.Context, e model.FirestoreGifEvent) error {
 	}
 	defer resp.Body.Close()
 
-	var data []byte
-	resp.Body.Read(data)
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Error(err)
+		return err
+	}
 
 	return uploadFile(data, "jaspergify-gifs-mp4", path.Base(gifURL))
 }
