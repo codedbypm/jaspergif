@@ -17,5 +17,6 @@ type FirestoreGifValue struct {
 
 // FirestoreGif is awesome
 type FirestoreGif struct {
-	URL StringValue `json:"mp4URL"`
+	URL        StringValue `json:"mp4URL"`
+	Identifier StringValue `json:"identifier"`
 }
