@@ -74,6 +74,7 @@ github.com/codedbypm/jaspergify v0.0.0-20200613214419-6b18f505a53a h1:qEowWmZ4vP
 github.com/codedbypm/jaspergify v0.0.0-20200801132416-a005cf7e1b01 h1:3VwOuQLfji3B7BROk42oLGovicbX70dfZth7nCOEbvA=
 github.com/codedbypm/jaspergify v0.0.0-20200802192610-9414e69175b2 h1:MBNQ46xEU9zcFrx+NNZVDUcum8G+sImjhrk7jWBBZmo=
 github.com/codedbypm/jaspergify v0.0.0-20200802213224-04944486f9a0 h1:HxGFSa0t6nxhT+BzSCSe90WOvPd025PqBBKt3LaGrV8=
+github.com/codedbypm/jaspergify v0.0.0-20200803000717-388464a60059 h1:FIWw+abhwpiF5Two7wsnJALTR1B7GUBd48d3Dgb5Kg4=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613214419-6b18f505a53a h1:sMDIJdYUMKmF7YxtTq83xBiD9gAkzLWjrkV1jmjzc5A=
 github.com/codedbypm/jaspergify/entry v0.0.0-20200613214419-6b18f505a53a/go.mod h1:Bp8FWVRXjTCvRdhYxx4lS2ts5XXxL/MKkkkclQ6mp/8=
 github.com/codedbypm/jaspergify/log v0.0.0-20200802192610-9414e69175b2 h1:JD9AcXqSGwA6ehhOiQkGeRyIVce8uqAi0trgkQgUjcs=
@@ -84,6 +85,8 @@ github.com/codedbypm/jaspergify/log v0.0.0-20200802213224-04944486f9a0 h1:gB+NYu
 github.com/codedbypm/jaspergify/log v0.0.0-20200802213224-04944486f9a0/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/log v0.0.0-20200802234937-e48d2f73da1b h1:TAFFjBeuDRP3r0x92dHcOWtcb+Mk2XO3oNwfFRacTYU=
 github.com/codedbypm/jaspergify/log v0.0.0-20200802234937-e48d2f73da1b/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059 h1:QvdyadECbE8uuRCzyBHEOMvWu+ByPXM96h4KgIY1XHg=
+github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/model v0.0.0-20200802192610-9414e69175b2 h1:xd8UZJO583lTWaajJ3pOHCl7ObZmmRUFLsZwEt4rw+w=
 github.com/codedbypm/jaspergify/model v0.0.0-20200802192610-9414e69175b2/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/codedbypm/jaspergify/model v0.0.0-20200802194024-9d3a44b9d7cd h1:NUnhN1ZBKg8QG/Qq2ER4I/BUrlfXqzSqzyi7/bgUUuI=
@@ -92,6 +95,8 @@ github.com/codedbypm/jaspergify/model v0.0.0-20200802213224-04944486f9a0 h1:cxyx
 github.com/codedbypm/jaspergify/model v0.0.0-20200802213224-04944486f9a0/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/codedbypm/jaspergify/model v0.0.0-20200802235012-add5fa7b4070 h1:LNlnWNYCSXdVq09uQ4ffjau/V/b4yjw5GL3j6+klEJk=
 github.com/codedbypm/jaspergify/model v0.0.0-20200802235012-add5fa7b4070/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059 h1:Klrhp0aeQvouDsLpfRCv1dD8PPyCREnLdUidXM9oOHI=
+github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
@@ -360,6 +365,8 @@ golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1 h1:sIky/MyNRSHTrdxfsiUSS4WIA
 golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200802091954-4b90ce9b60b3 h1:qDJKu1y/1SjhWac4BQZjLljqvqiWUhjmDMnonmVGDAU=
 golang.org/x/sys v0.0.0-20200802091954-4b90ce9b60b3/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200803210538-64077c9b5642 h1:B6caxRw+hozq68X2MY7jEpZh/cr4/aHLv9xU8Kkadrw=
+golang.org/x/sys v0.0.0-20200803210538-64077c9b5642/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
