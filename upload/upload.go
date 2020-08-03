@@ -5,7 +5,6 @@ import (
 	"context"
 	"io/ioutil"
 	"net/http"
-	"path"
 	"time"
 
 	"cloud.google.com/go/storage"
@@ -17,6 +16,7 @@ import (
 func OnFetchGif(ctx context.Context, e model.FirestoreGifEvent) error {
 
 	var gifURL = e.Value.Fields.URL.Value
+	var gifID = e.Value.Fields.Identifier.Value
 
 	// Get the data
 	resp, err := http.Get(gifURL)
@@ -32,7 +32,7 @@ func OnFetchGif(ctx context.Context, e model.FirestoreGifEvent) error {
 		return err
 	}
 
-	return uploadFile(data, "jaspergify-gifs-mp4", path.Base(gifURL))
+	return uploadFile(data, "jaspergify-gifs-mp4", gifID)
 }
 
 // uploadFile uploads an object.

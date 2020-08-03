@@ -46,8 +46,12 @@ github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGX
 github.com/codedbypm/jaspergify v0.0.0-20200803000717-388464a60059 h1:FIWw+abhwpiF5Two7wsnJALTR1B7GUBd48d3Dgb5Kg4=
 github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059 h1:QvdyadECbE8uuRCzyBHEOMvWu+ByPXM96h4KgIY1XHg=
 github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergify/log v0.0.0-20200803221650-b1ca8ad3378c h1:BGQuvl3XQ2sKHnhCeJg7JufJevQa8JWjOpCwjWaD7sY=
+github.com/codedbypm/jaspergify/log v0.0.0-20200803221650-b1ca8ad3378c/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
 github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059 h1:Klrhp0aeQvouDsLpfRCv1dD8PPyCREnLdUidXM9oOHI=
 github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergify/model v0.0.0-20200803221650-b1ca8ad3378c h1:wVAEMQuuQGZNSLSWSMaJJBIr864ZRmqeB+v6agIqHy8=
+github.com/codedbypm/jaspergify/model v0.0.0-20200803221650-b1ca8ad3378c/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
@@ -285,6 +289,8 @@ golang.org/x/tools v0.0.0-20200729194436-6467de6f59a7 h1:LHW24ah7B+uV/OePwNP0p/t
 golang.org/x/tools v0.0.0-20200729194436-6467de6f59a7/go.mod h1:njjCfa9FT2d7l9Bc6FUM5FLjQPp3cFF28FI3qnDFljA=
 golang.org/x/tools v0.0.0-20200731060945-b5fad4ed8dd6 h1:qKpj8TpV+LEhel7H/fR788J+KvhWZ3o3V6N2fU/iuLU=
 golang.org/x/tools v0.0.0-20200731060945-b5fad4ed8dd6/go.mod h1:njjCfa9FT2d7l9Bc6FUM5FLjQPp3cFF28FI3qnDFljA=
+golang.org/x/tools v0.0.0-20200803225502-5a22b632c5de h1:DaHQ7os7CK6ZG7WcDLRRRnwGnE8IJ7JqabDKjJ4s1Ok=
+golang.org/x/tools v0.0.0-20200803225502-5a22b632c5de/go.mod h1:njjCfa9FT2d7l9Bc6FUM5FLjQPp3cFF28FI3qnDFljA=
 golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
