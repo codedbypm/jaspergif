@@ -15,7 +15,7 @@ import (
 // OnFetchGif is the new awesome thing
 func OnFetchGif(ctx context.Context, e model.FirestoreGifEvent) error {
 
-	var gifURL = e.Value.Fields.URL.Value
+	var gifURL = ""
 
 	// Get the data
 	resp, err := http.Get(gifURL)
