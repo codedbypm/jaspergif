@@ -45,11 +45,11 @@ github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5P
 github.com/chzyer/test v0.0.0-20180213035817-a1ea475d72b1/go.mod h1:Q3SI9o4m/ZMnBNeIyt5eFwwo7qiLfzFZmjNmxjkiQlU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
-github.com/codedbypm/jaspergify v0.0.0-20200803000717-388464a60059 h1:FIWw+abhwpiF5Two7wsnJALTR1B7GUBd48d3Dgb5Kg4=
-github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059 h1:QvdyadECbE8uuRCzyBHEOMvWu+ByPXM96h4KgIY1XHg=
-github.com/codedbypm/jaspergify/log v0.0.0-20200803000717-388464a60059/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
-github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059 h1:Klrhp0aeQvouDsLpfRCv1dD8PPyCREnLdUidXM9oOHI=
-github.com/codedbypm/jaspergify/model v0.0.0-20200803000717-388464a60059/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
+github.com/codedbypm/jaspergif v0.0.0-20200803000717-388464a60059 h1:FIWw+abhwpiF5Two7wsnJALTR1B7GUBd48d3Dgb5Kg4=
+github.com/codedbypm/jaspergif/log v0.0.0-20200803000717-388464a60059 h1:QvdyadECbE8uuRCzyBHEOMvWu+ByPXM96h4KgIY1XHg=
+github.com/codedbypm/jaspergif/log v0.0.0-20200803000717-388464a60059/go.mod h1:btf2of/1kFb0jNr7FnijNApb5LHaekpeHkeudimYCIA=
+github.com/codedbypm/jaspergif/model v0.0.0-20200803000717-388464a60059 h1:Klrhp0aeQvouDsLpfRCv1dD8PPyCREnLdUidXM9oOHI=
+github.com/codedbypm/jaspergif/model v0.0.0-20200803000717-388464a60059/go.mod h1:eEY2TbqCUmjNdU1AKhOccfDOR6nQBLjAwKmcdbd2xgM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=

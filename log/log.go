@@ -8,14 +8,14 @@ import (
 	"cloud.google.com/go/logging"
 )
 
-// JaspergifyLogger is the default agora logger
-type JaspergifyLogger interface {
+// JaspergifLogger is the default agora logger
+type JaspergifLogger interface {
 	Debug(json []byte)
 	Error(e error)
 }
 
 // Logger ...
-var Logger *JaspergifyLogger
+var Logger *JaspergifLogger
 
 var cloudLogger *logging.Logger
 var localLogger *log.Logger
@@ -31,7 +31,7 @@ func createGCloudLogger() *logging.Logger {
 		log.Fatalf("Failed to create client: %v", err)
 	}
 
-	logName := "jaspergify-log"
+	logName := "jaspergif-log"
 	return loggingClient.Logger(logName)
 }
 

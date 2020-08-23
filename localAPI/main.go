@@ -5,9 +5,9 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	"github.com/codedbypm/jaspergify/entry"
-	"github.com/codedbypm/jaspergify/fetch"
-	"github.com/codedbypm/jaspergify/upload"
+	"github.com/codedbypm/jaspergif/entry"
+	"github.com/codedbypm/jaspergif/fetch"
+	"github.com/codedbypm/jaspergif/upload"
 )
 
 func main() {

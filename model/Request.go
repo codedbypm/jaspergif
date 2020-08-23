@@ -2,14 +2,14 @@ package model
 
 import "time"
 
-// Request models a request to Jaspergify a gif
+// Request models a request to Jaspergif a gif
 type Request struct {
 	GiphyIdentifier string        `firestore:"giphyId"`
 	Timestamp       time.Time     `firestore:"time"`
 	Status          RequestStatus `firestore:"status"`
 }
 
-// RequestStatus models the status of a request to Jaspergify a gif
+// RequestStatus models the status of a request to Jaspergif a gif
 type RequestStatus string
 
 const (

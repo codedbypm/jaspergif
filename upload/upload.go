@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"cloud.google.com/go/storage"
-	"github.com/codedbypm/jaspergify/log"
-	"github.com/codedbypm/jaspergify/model"
+	"github.com/codedbypm/jaspergif/log"
+	"github.com/codedbypm/jaspergif/model"
 )
 
 // OnFetchGif is the new awesome thing
@@ -32,7 +32,7 @@ func OnFetchGif(ctx context.Context, e model.FirestoreGifEvent) error {
 		return err
 	}
 
-	return uploadFile(data, "jaspergify-gifs-mp4", gifID)
+	return uploadFile(data, "jaspergif-gifs-mp4", gifID)
 }
 
 // uploadFile uploads an object.

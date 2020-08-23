@@ -9,8 +9,8 @@ import (
 	"strconv"
 
 	"cloud.google.com/go/firestore"
-	"github.com/codedbypm/jaspergify/log"
-	"github.com/codedbypm/jaspergify/model"
+	"github.com/codedbypm/jaspergif/log"
+	"github.com/codedbypm/jaspergif/model"
 )
 
 // OnCreateRequest is the new awesome thing

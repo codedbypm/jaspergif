@@ -1,7 +1,7 @@
 {
     "options": {
         "env": [
-            "PROJECT_ROOT=github.com/codedbypm/jaspergify",
+            "PROJECT_ROOT=github.com/codedbypm/jaspergif",
         ]
    },
     "steps": [

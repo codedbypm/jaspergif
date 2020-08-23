@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
-	"github.com/codedbypm/jaspergify/log"
-	"github.com/codedbypm/jaspergify/model"
+	"github.com/codedbypm/jaspergif/log"
+	"github.com/codedbypm/jaspergif/model"
 )
 
 // Entry is the new amazing thing

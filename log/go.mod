@@ -1,4 +1,4 @@
-module github.com/codedbypm/jaspergify/log
+module github.com/codedbypm/jaspergif/log
 
 go 1.13
 
