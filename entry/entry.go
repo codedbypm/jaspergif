@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
-	"github.com/codedbypm/jaspergif/log"
+	"github.com/codedbypm/golog"
 	"github.com/codedbypm/jaspergif/model"
 )
 
